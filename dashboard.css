@@ -1,0 +1,311 @@
+:root {
+  --leetcode-dark: #1a1a1a;
+  --leetcode-black: #0a0a0a;
+  --leetcode-yellow: #ffa116;
+  --leetcode-yellow-light: #ffb92c;
+  --leetcode-gray-dark: #2d2d2d;
+  --leetcode-gray: #444444;
+  --leetcode-gray-light: #6a6a6a;
+  --leetcode-text: #efefef;
+  --easy-color: #00af9b;
+  --medium-color: #ffb800;
+  --hard-color: #ff2d55;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--leetcode-dark);
+  color: var(--leetcode-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--leetcode-gray);
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--leetcode-yellow);
+}
+
+.add-friend {
+  display: flex;
+  gap: 8px;
+}
+
+#username-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--leetcode-gray);
+  background-color: var(--leetcode-black);
+  color: var(--leetcode-text);
+}
+
+#add-friend-btn {
+  padding: 8px 12px;
+  background-color: var(--leetcode-yellow);
+  color: var(--leetcode-black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+#add-friend-btn:hover {
+  background-color: var(--leetcode-yellow-light);
+}
+
+/* Friends List */
+.friends-container {
+  display: flex;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.friends-list-container {
+  width: 25%;
+  border-right: 1px solid var(--leetcode-gray);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.friend-details-container {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.friends-list-container,
+.friend-details-container {
+  transition: background-color 0.3s ease;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: var(--leetcode-gray-light);
+}
+
+.friend-item {
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 6px;
+}
+
+.friend-item:hover {
+  background-color: var(--leetcode-gray-dark);
+}
+
+/* Active Friend Tab */
+.friend-item.active {
+  border-left: 4px solid var(--leetcode-yellow);
+  padding-left: 12px;
+  background-color: var(--leetcode-gray-dark);
+}
+
+/* Remove Friend Button */
+.remove-friend-btn {
+  padding: 8px 12px;
+  background-color: var(--hard-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  margin-top: 16px;
+}
+
+.remove-friend-btn:hover {
+  background-color: #ff1a1a;
+}
+
+/* Friend Details */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.username a:hover {
+  color: var(--easy-color);
+  cursor: pointer;
+}
+
+.contest-rating {
+  margin-bottom: 8px;
+  color: var(--leetcode-yellow);
+  font-weight: 500;
+}
+
+.problem-stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.difficulty-count {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.difficulty-count.easy {
+  color: var(--easy-color);
+}
+
+.difficulty-count.medium {
+  color: var(--medium-color);
+}
+
+.difficulty-count.hard {
+  color: var(--hard-color);
+}
+
+/* Metrics Sections */
+.metrics-section {
+  background-color: var(--leetcode-gray-dark);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.activity-list {
+  margin-top: 16px;
+  list-style: none;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--leetcode-dark);
+  border: 1px solid #444;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.activity-item:hover {
+  background-color: var(--leetcode-gray-dark);
+}
+
+.activity-item .problem-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.activity-item .activity-time {
+  font-size: 12px;
+  color: var(--leetcode-gray-light);
+}
+
+/* Notifications */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: fadeIn 0.3s;
+}
+
+.notification.success {
+  background-color: var(--easy-color);
+}
+
+.notification.warning {
+  background-color: var(--medium-color);
+  color: #212529;
+}
+
+.notification.error {
+  background-color: var(--hard-color);
+}
+
+.notification.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  color: #fff;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #ffa116;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

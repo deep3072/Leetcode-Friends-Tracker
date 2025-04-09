@@ -1,0 +1,66 @@
+<!-- Dashboard interface for viewing and managing LeetCode friends' progress, submissions and contest performance -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Friend Tracker</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <div class="dashboard-header">
+      <h1>Friend Tracker</h1>
+      <div class="add-friend">
+        <input type="text" id="username-input" placeholder="Enter LeetCode username">
+        <button id="add-friend-btn">Add</button>
+      </div>
+    </div>
+
+    <div class="friends-container">
+      <div class="friends-list-container">
+        <h2>Your Friends</h2>
+        <div id="friends-list">
+          <!-- Friend list items will be dynamically added here -->
+          <div class="empty-state">No friends added yet.</div>
+        </div>
+      </div>
+
+      <div class="friend-details-container">
+        <div class="empty-state" id="no-friend-selected">Select a friend to view details.</div>
+        <div class="friend-details" id="friend-details" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template for friend details -->
+  <template id="friend-details-template">
+    <div class="friend-details">
+      <div class="profile-header">
+        <img src="" alt="Avatar" class="user-avatar">
+        <div class="profile-info">
+          <h2 class="username">Username</h2>
+          <p class="contest-rating">Rating: N/A</p>
+          <div class="problem-stats"></div>
+        </div>
+      </div>
+      
+      <div class="metrics-section">
+        <h3>Recent Activity</h3>
+        <div class="activity-list">
+          <!-- Past 5 solved problems will be rendered here -->
+        </div>
+      </div>
+      <div class="metrics-section">
+        <h3>Past Contests</h3>
+        <div class="past-contests">
+          <!-- Past 5 contest data will be rendered here -->
+        </div>
+      </div>
+      <button class="remove-friend-btn">Remove Friend</button>
+    </div>
+  </template>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
