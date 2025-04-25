@@ -1,20 +1,24 @@
-# Leetcode Friends Tracker
+# 🚀 Leetcode Friends Tracker
 
 A simple Chrome extension to track your friends' LeetCode progress. Easily add friends, view their profiles, recent submissions, and contest performance—all in one place.
 
-## Features
+## ✨ Get the Extension
 
-- **Friend Dashboard**  
-  Add LeetCode usernames and view detailed metrics, including rating, problem stats, recent activity, and contest history.
+Install the extension from the Chrome Web Store: [**Leetcode Friends Tracker**](https://chromewebstore.google.com/detail/leetcode-friends-tracker/ajiekifllgeejlgefpohojfneddclgom)
 
-- **In-Page Integration**  
+## Key Features
+
+- **🧑‍🤝‍🧑 Friend Dashboard**  
+Add LeetCode usernames and view detailed metrics, including rating, problem stats, recent activity, and contest history.
+
+- **🔗 In-Page Integration**  
   Injects a tracker button in LeetCode pages for quick access.
 
-## Working Demo
 
+## 👀 Working Demo
 https://github.com/user-attachments/assets/3d520ff2-082a-473f-906a-c843584160d5
 
-## Privacy Policy
+## ⼛ Privacy Policy
 
 ### Overview
 Leetcode Friends Tracker is designed with privacy in mind. This extension collects minimal data necessary for its core functionality.
